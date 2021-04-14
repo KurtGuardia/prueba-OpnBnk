@@ -1,28 +1,22 @@
-
-@import "styles/base";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import 'styles/variables';
+@import 'styles/mixins';
+@import 'styles/base';
+@import 'styles/typography.scss';
+@import 'styles/components/Header.scss';
+@import 'styles/views/FirstView.scss';
+@import 'styles/views/SecondView.scss';
+@import 'styles/views/ThirdView.scss';
 
 .App {
-  &-header{
-    &-logo{
-     max-width: 80px;
-    }
-  }
-  &-content{
-    padding: 1rem 4rem;
-    h3{
-      color: $primary-color;
-    }
-    p{
-      color: $secondary-color;
-    }
-    .bye-bye{
-      margin: 4rem 0 0;
-      text-align: center;
-      background: $terciary-color;
-      border: 1px solid #ddd;
-      color: #ababab;
-      padding: 1rem;
-      border-radius: 4px;
-    }
+  height: 100vh;
+  background-color: $secondary-color;
+  @include alignTop();
+
+  &__main {
+    margin: 2rem;
+    background-color: $white;
+    width: 90%;
+    height: 85%;
   }
 }

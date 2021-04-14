@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className='App'>
       <Header />
-      <div className='main'>
+      <div className='App__main'>
         <Switch>
           <Route path='/final' component={ThirdView} />
           <Route path='/step2' component={SecondView} />
