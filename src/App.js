@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import './App.scss';
+import Header from './components/Header';
+import FirstView from './views/FirstView';
+import SecondView from './views/SecondView';
+import ThirdView from './views/ThirdView';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <div className='main'>
+        <Switch>
+          <Route path='/final' component={ThirdView} />
+          <Route path='/step2' component={SecondView} />
+          <Route exact path='/' component={FirstView} />
+        </Switch>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
