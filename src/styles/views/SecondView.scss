@@ -13,7 +13,7 @@
     //All inputs (passwords and clue)
     & input {
       height: 5rem;
-      letter-spacing: 5px;
+
       color: $secondary-color;
       outline: none;
       padding: 1rem;
@@ -27,7 +27,11 @@
 
         &:invalid,
         &.error {
-          border-bottom: 3px solid rgb(233, 23, 23);
+          border-bottom: 3px solid $primary-color;
+        }
+
+        &.valid {
+          border-bottom: 3px solid $green;
         }
       }
 
@@ -59,21 +63,47 @@
         }
 
         & input {
+          letter-spacing: 5px;
           font-size: 2.5rem;
           width: 30rem;
+        }
+
+        & p {
+          transition: all 0.3s;
         }
       }
     }
 
-    //For the (opcional) quote
+    //For the (optional) quote
     & .optional {
       margin-left: 10rem;
+
+      & .info {
+        font-style: normal;
+        font-weight: bold;
+        position: relative;
+
+        &:hover {
+          &::after {
+            content: 'Puedes dejar una pista para recordar la contraseña, algo que solamente tu puedas entender';
+            position: absolute;
+            color: $grey;
+            background-color: $grey-transparent;
+            border-radius: 5px;
+            width: 45rem;
+            top: -5px;
+            left: 20px;
+          }
+        }
+      }
     }
 
     //Clue input
     & .clue {
       width: 90%;
       margin: 0 auto;
+      letter-spacing: 2px;
+      font-size: 1.6rem;
 
       &:focus {
         border-bottom: 3px solid $secondary-color;
