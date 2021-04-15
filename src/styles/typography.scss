@@ -12,10 +12,13 @@ code {
 
 .paragraph-big {
   font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0 2.5rem;
 }
 
 .paragraph-medium {
   font-size: 1.8rem;
+  padding: 1.5rem 4rem;
 }
 
 .paragraph-small {
@@ -24,7 +27,7 @@ code {
   &.quote {
     font-style: italic;
 
-    &.gold {
+    & .gold {
       color: $gold;
     }
 

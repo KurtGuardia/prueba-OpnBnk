@@ -1,3 +1,133 @@
 .FirstView {
+  @include alignTop();
   height: 100%;
+
+  &__content {
+    width: 100%;
+    padding: 2rem 3rem;
+
+    &--images {
+      @include center();
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      margin: 3rem auto;
+
+      & figure {
+        @include alignTop();
+        width: 40%;
+        text-align: center;
+      }
+    }
+
+    &--bottom {
+      @include center();
+      justify-content: space-between;
+      width: 75%;
+      margin-left: auto;
+
+      & .age-terms-validation {
+        position: relative;
+        width: 60%;
+
+        & > * {
+          cursor: pointer;
+        }
+
+        & .checkbox {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:hover ~ .checkmark {
+            background-color: $grey-transparent;
+          }
+
+          &:checked ~ .checkmark {
+            background-color: $primary-color;
+          }
+
+          &:checked ~ .checkmark::after {
+            display: block;
+          }
+        }
+
+        & .checkmark {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: $white;
+          border: 1px solid $secondary-color;
+          border-radius: 3px;
+          transition: all 0.3s;
+
+          @include respond(tab-land) {
+            left: 27px;
+          }
+
+          @include respond(tab-port) {
+            left: 22px;
+          }
+
+          @include respond(phone) {
+            height: 20px;
+            width: 20px;
+            top: 0;
+          }
+
+          &:hover {
+            background-color: $grey;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 9px;
+            top: 4px;
+            width: 7px;
+            height: 13px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+            @include respond(phone) {
+              left: 6px;
+              top: 3px;
+            }
+          }
+        }
+
+        & label {
+          position: absolute;
+          padding-left: 3rem;
+        }
+      }
+
+      & button {
+        position: relative;
+
+        &:disabled:hover {
+          &::after {
+            position: absolute;
+            content: 'Tienes que aceptar tu mayoría de edad y el tratamiento de tus datos';
+            background-color: rgb(216, 216, 216);
+            color: $black;
+            padding: 0.5rem;
+            font-size: 12px;
+            top: 0;
+            right: 110%;
+            width: fit-content;
+          }
+        }
+      }
+    }
+  }
 }

@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+@mixin center {
+  display: flex;
+  justify-content: center;
+}
+
 //Mixins
 //MEDIA QUERY MANAGER
 /*
