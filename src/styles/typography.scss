@@ -32,10 +32,12 @@ code {
     }
 
     &.red {
+      padding-left: 2rem;
       color: $primary-color;
     }
 
     &.green {
+      padding-left: 2rem;
       color: $green;
     }
   }

@@ -1,3 +1,76 @@
 .SecondView {
+  @include alignTop();
   height: 100%;
+
+  &__content {
+    width: 100%;
+    padding: 2rem 3rem;
+
+    &--passwords {
+      @include center();
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      margin: 2rem auto;
+
+      //For both Main and Reat passwords
+      & > div {
+        height: 15rem;
+        @include alignTop();
+        align-items: flex-start;
+        justify-content: space-around;
+
+        &.repeat-password {
+          justify-content: flex-end;
+          & > * {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        & input {
+          font-size: 2.5rem;
+          letter-spacing: 5px;
+          color: $secondary-color;
+          outline: none;
+          width: 30rem;
+          height: 5rem;
+          padding: 1rem;
+          border-radius: 8px;
+          border: 2px solid $secondary-color;
+
+          &::placeholder {
+            font-size: 1.8rem;
+            letter-spacing: normal;
+          }
+        }
+      }
+    }
+
+    //Only button
+    &--bottom {
+      @include center();
+      justify-content: space-between;
+      width: 75%;
+      margin-left: auto;
+
+      & button {
+        position: relative;
+
+        //Displays a small message on diabled button
+        &:disabled:hover {
+          &::after {
+            position: absolute;
+            content: 'Tienes que aceptar tu mayoría de edad y el tratamiento de tus datos';
+            background-color: rgb(216, 216, 216);
+            color: $black;
+            padding: 0.5rem;
+            font-size: 12px;
+            top: 0;
+            right: 110%;
+            width: fit-content;
+          }
+        }
+      }
+    }
+  }
 }
