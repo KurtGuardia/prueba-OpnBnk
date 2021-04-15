@@ -1,8 +1,8 @@
 .Steps {
+  @include alignTop();
   height: 12%;
   width: 100%;
   background: linear-gradient(360deg, $primary-color 6.87%, $black 181.28%);
-  @include alignTop();
   justify-content: center;
 
   &__numbers {
@@ -13,9 +13,9 @@
     &--each {
       position: relative;
       font-size: 4rem;
-      transform: scale(0.8);
+      transform: translateY(0) scale(0.8);
       color: rgba($secondary-color, $alpha: 0.4);
-      transition: all 0.3s;
+      transition: all 0.5s;
 
       //Line between 1 and 2
       &:first-child::after {
@@ -26,6 +26,7 @@
         height: 2px;
         top: 50%;
         transform: translate(140%, 0%);
+        transition: all 0.5s;
       }
 
       //Line between 2 and 3
@@ -37,6 +38,7 @@
         height: 2px;
         top: 50%;
         transform: translate(-180%, 0%);
+        transition: all 0.5s;
       }
 
       & .circle {

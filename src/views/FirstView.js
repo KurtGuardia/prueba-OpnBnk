@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import Steps from '../components/Steps';
 import { Mind, Safe } from '../assets/img';
 import Button from '../components/Button';
+import { useHistory } from 'react-router-dom';
 
 const FirstView = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const history = useHistory();
+
+  const nextPage = () => {
+    history.push('/2');
+  };
+
   return (
     <div className='FirstView'>
       <Steps />
@@ -45,21 +52,21 @@ const FirstView = () => {
           que necesites tener en un lugar seguro.
         </p>
         <div className='FirstView__content--bottom'>
-          <div class='age-terms-validation'>
+          <div className='age-terms-validation'>
             <input
               type='checkbox'
               id='privacy'
               value='privacy'
-              class='checkbox'
+              className='checkbox'
               onChange={() => setIsChecked(!isChecked)}
             />
-            <span class='checkmark'></span>
-            <label for='privacy' class='paragraph-small quote'>
+            <span className='checkmark'></span>
+            <label htmlFor='privacy' className='paragraph-small quote'>
               Soy mayor de 18 años y acepto que mis datos sean tratados según la
               politica de protección de datos.
             </label>
           </div>
-          <Button text='Siguiente' disabled={!isChecked} />
+          <Button text='Siguiente' disabled={!isChecked} clicked={nextPage} />
         </div>
       </div>
     </div>

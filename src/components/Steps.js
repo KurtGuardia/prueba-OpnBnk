@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Steps = () => {
   const location = useLocation().pathname;
+  const storedLoc = useRef(location);
+  const [activeStep, setActiveStep] = useState('/');
+
+  //For the step's animation
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveStep(storedLoc.current);
+    }, 50);
+  }, []);
 
   return (
     <div className='Steps'>
       <div className='Steps__numbers'>
         <div
           className={`Steps__numbers--each 1 ${
-            location === '/' ? 'active' : ''
+            activeStep === '/' ? 'active' : ''
           }`}
         >
           <div className='circle'></div>
@@ -17,7 +26,7 @@ const Steps = () => {
         </div>
         <div
           className={`Steps__numbers--each ${
-            location === '/2' ? 'active' : ''
+            activeStep === '/2' ? 'active' : ''
           }`}
         >
           <div className='circle'></div>
@@ -25,7 +34,7 @@ const Steps = () => {
         </div>
         <div
           className={`Steps__numbers--each 3 ${
-            location === '/3' ? 'active' : ''
+            activeStep === '/3' ? 'active' : ''
           }`}
         >
           <div className='circle'></div>

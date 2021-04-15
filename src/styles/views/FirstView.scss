@@ -20,6 +20,7 @@
       }
     }
 
+    //Only checkbox input and button
     &--bottom {
       @include center();
       justify-content: space-between;
@@ -34,6 +35,7 @@
           cursor: pointer;
         }
 
+        //To have a custom checkbox but use the native checkbox functionality
         & .checkbox {
           position: absolute;
           opacity: 0;
@@ -54,6 +56,7 @@
           }
         }
 
+        //Custom checkbox
         & .checkmark {
           cursor: pointer;
           position: absolute;
@@ -84,6 +87,7 @@
             background-color: $grey;
           }
 
+          //The "check" sign
           &::after {
             content: '';
             position: absolute;
@@ -114,6 +118,7 @@
       & button {
         position: relative;
 
+        //Displays a small message on diabled button
         &:disabled:hover {
           &::after {
             position: absolute;
