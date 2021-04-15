@@ -1,0 +1,70 @@
+.Steps {
+  height: 15%;
+  background: linear-gradient(360deg, $primary-color 6.87%, $black 181.28%);
+  @include alignTop();
+  justify-content: center;
+
+  &__numbers {
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+
+    &--each {
+      position: relative;
+      font-size: 4.8rem;
+      transform: scale(0.8);
+      color: rgba($secondary-color, $alpha: 0.4);
+      transition: all 0.3s;
+
+      //Line between 1 and 2
+      &:first-child::after {
+        position: absolute;
+        content: '';
+        border-top: 2px solid rgba($secondary-color, $alpha: 0.35);
+        width: 4rem;
+        height: 2px;
+        top: 50%;
+        transform: translate(140%, 0%);
+      }
+
+      //Line between 2 and 3
+      &:last-child::after {
+        position: absolute;
+        content: '';
+        border-top: 2px solid rgba($secondary-color, $alpha: 0.35);
+        width: 4rem;
+        height: 2px;
+        top: 50%;
+        transform: translate(-180%, 0%);
+      }
+
+      & .circle {
+        position: absolute;
+        width: 6rem;
+        height: 6rem;
+        transform: translate(-25%);
+        border: 1px solid rgba($secondary-color, $alpha: 0.35);
+        border-radius: 50%;
+        background-color: rgba($secondary-color, $alpha: 0.15);
+      }
+
+      &.active {
+        color: $secondary-color;
+        transform: translateY(-1rem) scale(1);
+
+        &:first-child::after {
+          top: 70%;
+        }
+
+        &:last-child::after {
+          top: 70%;
+        }
+
+        .circle {
+          background-color: rgba($secondary-color, $alpha: 0.35);
+          border: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
+}

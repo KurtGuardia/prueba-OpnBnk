@@ -12,8 +12,8 @@ const App = () => {
       <Header />
       <div className='App__main'>
         <Switch>
-          <Route path='/final' component={ThirdView} />
-          <Route path='/step2' component={SecondView} />
+          <Route path='/3' component={ThirdView} />
+          <Route path='/2' component={SecondView} />
           <Route exact path='/' component={FirstView} />
         </Switch>
       </div>
