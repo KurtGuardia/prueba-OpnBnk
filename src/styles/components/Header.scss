@@ -1,6 +1,23 @@
 .header {
   color: $black;
-  background-color: $white;
+  background: radial-gradient(
+    240.01% 165.3% at 50% 50%,
+    $white 25.68%,
+    $black 55%
+  );
   height: 15%;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & svg {
+    padding-left: 5rem;
+  }
+
+  .title-huge {
+    padding-right: 13rem;
+    font-style: normal;
+    font-weight: normal;
+  }
 }

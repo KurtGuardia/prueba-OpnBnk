@@ -10,7 +10,11 @@
 
 .App {
   height: 100vh;
-  background-color: $secondary-color;
+  background: radial-gradient(
+    86.87% 86.87% at 50% 50%,
+    $secondary-color 56.93%,
+    $black 100%
+  );
   @include alignTop();
 
   &__main {
