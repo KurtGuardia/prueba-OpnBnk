@@ -87,8 +87,11 @@
           &::after {
             content: 'Puedes dejar una pista para recordar la contraseña, algo que solamente tu puedas entender';
             position: absolute;
-            color: $grey;
-            background-color: $grey-transparent;
+            background-color: rgb(216, 216, 216);
+            color: $black;
+            font-size: 12px;
+            font-weight: normal;
+            padding: 0.5rem;
             border-radius: 5px;
             width: 45rem;
             top: -5px;

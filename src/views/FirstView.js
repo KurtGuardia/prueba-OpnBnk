@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Steps from '../components/Steps';
 import { Mind, Safe } from '../assets/img';
 import Button from '../components/Button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const FirstView = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -19,7 +19,18 @@ const FirstView = () => {
         <div className='paragraph-small quote'>
           <span className='gold'>Sabías que:</span> 59% de los españoles
           utilizan la misma contraseña para proteger <b>todas</b> sus cuentas en
-          internet? <span className='gold'>nota.</span>
+          internet?
+          <Link
+            to={{
+              pathname:
+                'https://www.20minutos.es/noticia/3725339/0/59-por-ciento-espanoles-utilizan-misma-contrasena-proteger-cuentas-internet/?autoref=true',
+            }}
+            target='_blank'
+            className='gold'
+          >
+            {' '}
+            nota.<span style={{ fontStyle: 'normal' }}>↗</span>
+          </Link>
         </div>
         <div className='FirstView__content--images'>
           <figure>

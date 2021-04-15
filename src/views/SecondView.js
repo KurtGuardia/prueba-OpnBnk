@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Steps from '../components/Steps';
 import Button from '../components/Button';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const SecondView = () => {
   const [password, setPassword] = useState('');
@@ -50,7 +50,6 @@ const SecondView = () => {
 
   const handleSubmit = () => {
     history.push('/3');
-    console.log('hey');
   };
 
   return (
@@ -60,7 +59,16 @@ const SecondView = () => {
         <div className='paragraph-small quote'>
           <span className='gold'>Sabías que:</span> 23 millones de usuarios en
           todo el mundo utilizan la contraseña “123456”?{' '}
-          <span className='gold'>nota.</span>
+          <Link
+            to={{
+              pathname:
+                'https://www.20minutos.es/noticia/3622473/0/millones-usuarios-contrasena-123456-online/?autoref=true',
+            }}
+            target='_blank'
+            className='gold'
+          >
+            nota.<span style={{ fontStyle: 'normal' }}>↗</span>
+          </Link>
         </div>
         <p className='paragraph-medium'>
           El primer paso para tu seguridad en internet es crear una contraseña{' '}

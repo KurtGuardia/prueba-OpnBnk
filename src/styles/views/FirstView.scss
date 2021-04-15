@@ -3,7 +3,11 @@
   height: 100%;
 
   &__content {
+    @include alignTop();
+    align-items: flex-start;
+    justify-content: space-evenly;
     width: 100%;
+    height: 88%;
     padding: 2rem 3rem;
 
     &--images {
