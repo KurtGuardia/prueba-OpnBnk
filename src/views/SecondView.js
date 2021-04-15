@@ -1,6 +1,6 @@
 import React from 'react';
 import Steps from '../components/Steps';
-
+import Button from '../components/Button';
 const SecondView = () => {
   return (
     <div className='SecondView'>
@@ -27,15 +27,41 @@ const SecondView = () => {
               Al menos una mayúscula {`X`}
             </p>
 
-            <input type='password' placeholder='Escribe tu contraseña' />
+            <input
+              required
+              className='error'
+              type='password'
+              placeholder='Escribe tu contraseña'
+            />
           </div>
           <div className='repeat-password'>
             <p className='paragraph-small quote red'>
               Las contraseñas deben coincidir {`X`}
             </p>
 
-            <input type='password' placeholder='Repite tu contraseña' />
+            <input
+              required
+              type='password'
+              placeholder='Repite tu contraseña'
+            />
           </div>
+        </div>
+        <p className='paragraph-medium'>
+          También puedes crear una puesta que te ayude a recordar tu Contraseña
+          Maestra.
+        </p>
+        <p className='paragraph-small quote optional'>
+          Crea tu pista para recordar tu contraseña (opcional)
+        </p>
+        <input
+          className='clue'
+          type='text'
+          placeholder='Introduce tu pista'
+          autoComplete='off'
+        />
+        <div className='SecondView__content--bottom'>
+          <Button text='Cancelar' />
+          <Button text='Siguiente' disabled />
         </div>
       </div>
     </div>
