@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Steps from '../components/Steps';
 import Button from '../components/Button';
+import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import { submitForm } from '../services/api';
+import { sendPassword } from '../actions/apiAction';
 
 const SecondView = () => {
   const [password, setPassword] = useState('');
@@ -13,6 +16,7 @@ const SecondView = () => {
   const [passwordsMatch, setPasswordsMatch] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isCorrectLength && hasANumber && hasCapitalLetter) setIsValid(true);
@@ -49,6 +53,7 @@ const SecondView = () => {
   };
 
   const handleSubmit = () => {
+    dispatch(sendPassword(password));
     history.push('/3');
   };
 
@@ -143,7 +148,7 @@ const SecondView = () => {
         />
         {clueCount}/255
         <div className='SecondView__content--bottom'>
-          <Button text='Cancelar' />
+          <Button text='Cancelar' clicked={() => history.push('/')} />
           <Button text='Siguiente' disabled={disabled} clicked={handleSubmit} />
         </div>
       </div>
