@@ -28,6 +28,27 @@ html {
 
 body {
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 1em;
+    background-color: $secondary-color;
+    @media screen and (max-width: 500px) {
+      width: 0.3em;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: $primary-color-dark;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $primary-color;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: $primary-color;
+  }
 }
 
 ::selection {
