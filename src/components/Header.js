@@ -8,6 +8,7 @@ const Header = () => {
         <Logo />
       </div>
       <h1 className='title-huge'>Crea tu Password Manager</h1>
+      <div id='google_translate_element'></div>
     </div>
   );
 };

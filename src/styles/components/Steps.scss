@@ -14,6 +14,10 @@
       width: 30%;
     }
 
+    @include respond(phone) {
+      width: 60%;
+    }
+
     &--each {
       position: relative;
       font-size: 4rem;
