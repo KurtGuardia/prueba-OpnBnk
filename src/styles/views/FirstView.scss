@@ -77,18 +77,14 @@
           border-radius: 3px;
           transition: all 0.3s;
 
-          @include respond(tab-land) {
-            left: 27px;
-          }
-
           @include respond(tab-port) {
-            left: 22px;
+            left: -5px;
           }
 
           @include respond(phone) {
             height: 20px;
             width: 20px;
-            top: 0;
+            left: 0;
           }
 
           &:hover {

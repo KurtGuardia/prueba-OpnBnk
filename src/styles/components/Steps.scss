@@ -17,19 +17,8 @@
       color: rgba($secondary-color, $alpha: 0.4);
       transition: all 0.5s;
 
-      //Line between 1 and 2
-      &:first-child::after {
-        position: absolute;
-        content: '';
-        border-top: 2px solid rgba($secondary-color, $alpha: 0.35);
-        width: 4rem;
-        height: 2px;
-        top: 50%;
-        transform: translate(140%, 0%);
-        transition: all 0.5s;
-      }
-
-      //Line between 2 and 3
+      //Both lines
+      &:first-child::after,
       &:last-child::after {
         position: absolute;
         content: '';
@@ -37,8 +26,21 @@
         width: 4rem;
         height: 2px;
         top: 50%;
-        transform: translate(-180%, 0%);
         transition: all 0.5s;
+
+        @include respond(tab-land) {
+          width: 3rem;
+        }
+      }
+
+      //Line between 1 and 2
+      &:first-child::after {
+        transform: translate(140%, 0%);
+      }
+
+      //Line between 2 and 3
+      &:last-child::after {
+        transform: translate(-180%, 0%);
       }
 
       & .circle {
@@ -55,12 +57,14 @@
         color: $secondary-color;
         transform: translateY(-1rem) scale(1);
 
-        &:first-child::after {
-          top: 70%;
-        }
-
+        &:first-child::after,
         &:last-child::after {
           top: 70%;
+          width: 3.5rem;
+
+          @include respond(tab-land) {
+            width: 2.8rem;
+          }
         }
 
         .circle {
