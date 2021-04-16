@@ -52,6 +52,10 @@
         width: 75%;
       }
 
+      @include respond(tab-port) {
+        width: 80%;
+      }
+
       //For both Main and Reat passwords
       & > div {
         height: 15rem;

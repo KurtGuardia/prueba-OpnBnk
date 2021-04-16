@@ -10,6 +10,10 @@
     display: flex;
     justify-content: space-around;
 
+    @include respond(tab-port) {
+      width: 30%;
+    }
+
     &--each {
       position: relative;
       font-size: 4rem;
@@ -31,11 +35,16 @@
         @include respond(tab-land) {
           width: 3rem;
         }
+
+        @include respond(tab-port) {
+          width: 2.5rem;
+        }
       }
 
       //Line between 1 and 2
       &:first-child::after {
         transform: translate(140%, 0%);
+        left: 5px;
       }
 
       //Line between 2 and 3

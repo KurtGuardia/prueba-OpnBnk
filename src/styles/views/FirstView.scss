@@ -10,6 +10,12 @@
     height: 88%;
     padding: 2rem 3rem;
 
+    @include respond(tab-port) {
+      & .quote {
+        width: 80%;
+      }
+    }
+
     &--images {
       @include center();
       justify-content: space-between;
