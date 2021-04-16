@@ -56,6 +56,11 @@
         width: 80%;
       }
 
+      @include respond(phone) {
+        flex-direction: column;
+        height: 25rem;
+      }
+
       //For both Main and Reat passwords
       & > div {
         height: 15rem;

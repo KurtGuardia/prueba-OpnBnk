@@ -26,6 +26,10 @@ code {
 .paragraph-medium {
   font-size: 1.8rem;
   padding: 1.5rem 4rem;
+
+  @include respond(phone) {
+    padding: 1rem 2rem;
+  }
 }
 
 .paragraph-small {

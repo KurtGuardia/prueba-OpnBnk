@@ -9,6 +9,16 @@
     align-items: center;
     margin-bottom: 3rem;
 
+    @include respond(phone) {
+      margin-bottom: 0;
+    }
+
+    & svg {
+      @include respond(phone) {
+        width: 8rem;
+      }
+    }
+
     & h2 {
       margin-left: 2rem;
     }
@@ -17,5 +27,9 @@
   &__text {
     width: 90%;
     align-self: flex-end;
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 }
