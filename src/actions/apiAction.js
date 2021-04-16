@@ -15,3 +15,7 @@ export const sendPassword = (password) => (dispatch, getState) => {
       })
     );
 };
+
+export const restart = () => (dispatch, getState) => {
+  dispatch({ type: 'RESET' });
+};

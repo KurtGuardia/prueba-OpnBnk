@@ -3,7 +3,6 @@ import Steps from '../components/Steps';
 import Button from '../components/Button';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { submitForm } from '../services/api';
 import { sendPassword } from '../actions/apiAction';
 
 const SecondView = () => {

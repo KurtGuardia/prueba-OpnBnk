@@ -21,29 +21,8 @@
     padding: 0.2rem 0.5rem;
   }
 
-  //   &.abs-bottom-left {
-  //     position: absolute;
-  //     bottom: 4rem;
-  //     left: 4rem;
-
-  //     @media screen and (max-width: 600px) {
-  //       bottom: 2rem;
-  //       left: 2rem;
-  //     }
-  //   }
-
-  //   &.abs-bottom-right {
-  //     position: absolute;
-  //     bottom: 4rem;
-  //     right: 4rem;
-
-  //     @media screen and (max-width: 600px) {
-  //       bottom: 2rem;
-  //       right: 2rem;
-  //     }
-  //   }
-
   &:hover {
+    background: $primary-color-dark;
     color: $white;
   }
 

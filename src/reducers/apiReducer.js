@@ -1,4 +1,6 @@
-export const apiReducer = (state = {}, action) => {
+const initial_sate = {};
+
+export const apiReducer = (state = initial_sate, action) => {
   switch (action.type) {
     case 'PASSWORD_SUCCESS':
       return {
@@ -10,6 +12,8 @@ export const apiReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
+    case 'RESET':
+      return initial_sate;
     default:
       return state;
   }
