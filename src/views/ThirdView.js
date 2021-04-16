@@ -3,6 +3,8 @@ import Steps from '../components/Steps';
 import { useSelector } from 'react-redux';
 import Spinner from '../components/Spinner';
 import Positive from '../components/Positive';
+import Negative from '../components/Negative';
+import Button from '../components/Button';
 
 const ThirdView = () => {
   const [loading, setLoading] = useState(true);
@@ -19,6 +21,8 @@ const ThirdView = () => {
       <Steps />
       {/* {loading && <Spinner />} */}
       <Positive />
+      {/* <Negative /> */}
+      <Button text='Reiniciar' />
     </div>
   );
 };

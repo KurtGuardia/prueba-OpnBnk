@@ -24,6 +24,10 @@
       }
     }
 
+    & .paragraph-big {
+      font-weight: bold;
+    }
+
     //Only checkbox input and button
     &--bottom {
       @include center();

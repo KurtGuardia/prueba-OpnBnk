@@ -1,0 +1,21 @@
+.Final {
+  width: 70%;
+  @include alignTop();
+  align-items: unset;
+
+  &__title {
+    @include center();
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    & h2 {
+      margin-left: 2rem;
+    }
+  }
+
+  &__text {
+    width: 90%;
+    align-self: flex-end;
+  }
+}
