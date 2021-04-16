@@ -49,6 +49,11 @@ const SecondView = () => {
       setPasswordsMatch(true);
       setDisabled(false);
     }
+
+    if (input !== password) {
+      setPasswordsMatch(false);
+      setDisabled(true);
+    }
   };
 
   const handleSubmit = () => {
