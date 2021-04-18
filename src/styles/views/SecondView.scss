@@ -63,6 +63,7 @@
 
       //For both Main and Reat passwords
       & > div {
+        position: relative;
         height: 15rem;
         @include alignTop();
         align-items: flex-start;
@@ -83,6 +84,22 @@
 
         & p {
           transition: all 0.3s;
+        }
+
+        & .hide-password {
+          position: absolute;
+          top: 80%;
+          right: -4rem;
+          transform: translate(-50%, -50%);
+
+          @include respond(tab-land) {
+            right: -5rem;
+          }
+
+          @include respond(phone) {
+            right: -5rem;
+            width: 18px;
+          }
         }
       }
     }

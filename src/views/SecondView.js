@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { sendPassword } from '../actions/apiAction';
+import { Eye, Hide } from '../assets/img';
 
 const SecondView = () => {
   const [password, setPassword] = useState('');
@@ -14,6 +15,7 @@ const SecondView = () => {
   const [hasCapitalLetter, setHasCapitalLetter] = useState(false);
   const [passwordsMatch, setPasswordsMatch] = useState(false);
   const [isValid, setIsValid] = useState(false);
+  const [isHidePassword, setIsHidePassword] = useState(true);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -113,11 +115,24 @@ const SecondView = () => {
               id='main-password'
               required
               className={`${isValid ? 'valid' : 'error'}`}
-              type='password'
+              type={isHidePassword ? 'password' : 'text'}
               placeholder='Escribe tu contraseña'
               onChange={handleMainPasswordInput}
             />
+            {isHidePassword ? (
+              <Hide
+                id='hide'
+                className='hide-password'
+                onClick={() => setIsHidePassword(false)}
+              />
+            ) : (
+              <Eye
+                className='hide-password'
+                onClick={() => setIsHidePassword(true)}
+              />
+            )}
           </div>
+
           <div className='repeat-password'>
             <p
               className={`paragraph-small quote ${
@@ -130,10 +145,22 @@ const SecondView = () => {
               id='repeat-password'
               className={` ${passwordsMatch ? 'valid' : 'error'}`}
               required
-              type='password'
+              type={isHidePassword ? 'password' : 'text'}
               placeholder='Repite tu contraseña'
               onChange={handleRepeatPassword}
             />
+            {isHidePassword ? (
+              <Hide
+                id='hide'
+                className='hide-password'
+                onClick={() => setIsHidePassword(false)}
+              />
+            ) : (
+              <Eye
+                className='hide-password'
+                onClick={() => setIsHidePassword(true)}
+              />
+            )}
           </div>
         </div>
         <p className='paragraph-medium'>

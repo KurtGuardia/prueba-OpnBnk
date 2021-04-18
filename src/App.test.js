@@ -43,6 +43,7 @@ test('Normal behaviour with negative API call', async () => {
   const passwordRepeat = await page.$eval('#repeat-password', (el) => el.value);
   expect(password).toEqual(passwordRepeat);
 
+  await page.click('svg#hide');
   await page.click('button#next');
 }, 10000);
 
@@ -66,5 +67,6 @@ test('Normal behaviour with positive API call', async () => {
   //Passwords match comparisson
   expect(password).toEqual(passwordRepeat);
 
+  await page.click('svg#hide');
   await page.click('button#next');
 }, 10000);
