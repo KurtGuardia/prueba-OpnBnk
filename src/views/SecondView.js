@@ -110,8 +110,9 @@ const SecondView = () => {
             </p>
 
             <input
+              id='main-password'
               required
-              className={` ${isValid ? 'valid' : 'error'}`}
+              className={`${isValid ? 'valid' : 'error'}`}
               type='password'
               placeholder='Escribe tu contraseña'
               onChange={handleMainPasswordInput}
@@ -126,6 +127,7 @@ const SecondView = () => {
               Las contraseñas deben coincidir {passwordsMatch ? '✔' : 'X'}
             </p>
             <input
+              id='repeat-password'
               className={` ${passwordsMatch ? 'valid' : 'error'}`}
               required
               type='password'
@@ -152,8 +154,17 @@ const SecondView = () => {
         />
         {clueCount}/255
         <div className='SecondView__content--bottom'>
-          <Button text='Cancelar' clicked={() => history.push('/')} />
-          <Button text='Siguiente' disabled={disabled} clicked={handleSubmit} />
+          <Button
+            text='Cancelar'
+            clicked={() => history.push('/')}
+            id='cancel'
+          />
+          <Button
+            text='Siguiente'
+            disabled={disabled}
+            clicked={handleSubmit}
+            id='next'
+          />
         </div>
       </div>
     </div>

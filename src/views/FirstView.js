@@ -65,19 +65,28 @@ const FirstView = () => {
         <div className='FirstView__content--bottom'>
           <div className='age-terms-validation'>
             <input
-              type='checkbox'
               id='privacy'
+              type='checkbox'
               value='privacy'
               className='checkbox'
               onChange={() => setIsChecked(!isChecked)}
             />
             <span className='checkmark'></span>
-            <label htmlFor='privacy' className='paragraph-small quote'>
+            <label
+              htmlFor='privacy'
+              id='privacy'
+              className='paragraph-small quote'
+            >
               Soy mayor de 18 años y acepto que mis datos sean tratados según la
               politica de protección de datos.
             </label>
           </div>
-          <Button text='Siguiente' disabled={!isChecked} clicked={nextPage} />
+          <Button
+            text='Siguiente'
+            disabled={!isChecked}
+            clicked={nextPage}
+            id='next'
+          />
         </div>
       </div>
     </div>

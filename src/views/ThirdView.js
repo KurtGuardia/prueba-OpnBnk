@@ -32,7 +32,7 @@ const ThirdView = () => {
       {loading && <Spinner />}
       {status && <Positive />}
       {error && <Negative />}
-      <Button text='Reiniciar' clicked={handleRestart} />
+      <Button text='Reiniciar' clicked={handleRestart} id='next' />
     </div>
   );
 };
