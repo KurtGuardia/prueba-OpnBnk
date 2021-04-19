@@ -3,6 +3,21 @@ import Steps from '../components/Steps';
 import { Mind, Safe } from '../assets/img';
 import Button from '../components/Button';
 import { Link, useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 0.5 },
+  },
+  exit: {
+    x: '-100vw',
+    transition: { ease: 'easeInOut' },
+  },
+};
 
 const FirstView = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -15,7 +30,13 @@ const FirstView = () => {
   return (
     <div className='FirstView'>
       <Steps />
-      <div className='FirstView__content'>
+      <motion.div
+        className='FirstView__content'
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='exit'
+      >
         <div className='paragraph-small quote'>
           <span className='gold'>Sabías que:</span> 59% de los españoles
           utilizan la misma contraseña para proteger <b>todas</b> sus cuentas en
@@ -88,7 +109,7 @@ const FirstView = () => {
             id='next'
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,9 +1,28 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Check } from '../assets/img';
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: '-100vh',
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', delay: 0.5 },
+  },
+};
+
 const Positive = () => {
   return (
-    <div className='Final'>
+    <motion.div
+      className='Final'
+      variants={containerVariants}
+      initial='hidden'
+      animate='visible'
+      exit='exit'
+    >
       <div className='Final__title'>
         <Check />
         <h2 className='title-huge'>Tu Password Manager ya está creado!</h2>
@@ -16,7 +35,7 @@ const Positive = () => {
           <b> Password Manager </b>las recordará por ti!
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

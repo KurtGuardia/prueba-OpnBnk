@@ -5,6 +5,21 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { sendPassword } from '../actions/apiAction';
 import { Eye, Hide } from '../assets/img';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 0.5 },
+  },
+  exit: {
+    x: '-100vw',
+    transition: { ease: 'easeInOut' },
+  },
+};
 
 const SecondView = () => {
   const [password, setPassword] = useState('');
@@ -66,7 +81,13 @@ const SecondView = () => {
   return (
     <div className='SecondView'>
       <Steps />{' '}
-      <div className='SecondView__content'>
+      <motion.div
+        className='SecondView__content'
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='exit'
+      >
         <div className='paragraph-small quote'>
           <span className='gold'>Sabías que:</span> 23 millones de usuarios en
           todo el mundo utilizan la contraseña “123456”?{' '}
@@ -193,7 +214,7 @@ const SecondView = () => {
             id='next'
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
